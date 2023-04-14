@@ -11,11 +11,10 @@ const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
 
 const entryFile = packageJson.main;
 
-console.log(packageJson)
 if(packageJson.type !== "module") {
   throw new Error("Only ESM is supported");
 }
 
 const entryModule = new Module(entryFile);
 
-console.log(entryModule.findDependencies());
+console.log(entryModule);
